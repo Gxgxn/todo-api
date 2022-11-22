@@ -10,7 +10,7 @@ router.get("/", function (req, res) {
 });
 router.post("/createtodo", createTodoController);
 router.put("/createtask/:id", createTaskTodoController);
-router.put("/deletetodo/:id", deleteTodoController);
+router.delete("/deletetodo/:id", deleteTodoController);
 router.get("/getalltodo", getallTodo);
 router.get("/gettodo/:id", getTodo);
 
