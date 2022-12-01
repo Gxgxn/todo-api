@@ -6,6 +6,7 @@ const TodoSchema = new Schema({
   title: {
     type: String,
     required: [true, "title is required"],
+    timestamps: true,
   },
   tasks: [String],
 });

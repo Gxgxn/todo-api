@@ -2,7 +2,7 @@
 
 const Todo = require("../model/Todo");
 
-module.exports = async function getTodosController(req, res) {
+module.exports = async function getTodosController(req, res, next) {
   try {
     const todos = await Todo.find();
     res.status(201).json(todos);

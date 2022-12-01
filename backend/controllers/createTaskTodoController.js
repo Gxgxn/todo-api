@@ -6,10 +6,15 @@ module.exports = async function createTaskTodoController(req, res) {
     const todo = await Todo.findById(todoId);
     if (!todo) return res.status(400).send("No todo exists");
     const { text } = req.body;
+    if (!text) throw new Error("Please provide a valid todo title");
     todo.tasks.push(text);
     await todo.save();
     res.json(todo);
   } catch (error) {
     console.log(error);
+    res.status(401).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
