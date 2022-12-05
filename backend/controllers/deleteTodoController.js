@@ -4,7 +4,7 @@ module.exports = async function deleteTodoController(req, res) {
   try {
     const todoId = req.params.id;
     const deletedTodo = await Todo.findByIdAndDelete(todoId);
-    res.status(201).json({
+    res.status(204).json({
       success: true,
       message: "User Deleted Successfully",
       deletedTodo,

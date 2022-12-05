@@ -10,6 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 connectToDB();
-app.use("/", todoRouter);
+app.use("/api", todoRouter);
 
 module.exports = app;
