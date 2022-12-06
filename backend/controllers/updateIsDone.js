@@ -1,12 +1,12 @@
 const Todo = require("../model/Todo");
 
-module.exports = async function updateTaskController(req, res) {
+module.exports = async function updateIsDone(req, res) {
   try {
     const todoId = req.params.id;
     const taskId = req.params.taskId;
-    const newTask = req.body.task;
-    // console.log(taskId, todoId, newTask);
-    if (!taskId || !todoId || !newTask) {
+    const status = req.body.isDone;
+    console.log(status);
+    if (!taskId || !todoId) {
       throw new Error("both todo id and task id required");
     }
 
@@ -14,7 +14,7 @@ module.exports = async function updateTaskController(req, res) {
     const todo = await Todo.findById(todoId);
     const newTasks = todo.tasks.map((taskObj) => {
       if (taskObj._id == taskId) {
-        taskObj.task = newTask;
+        taskObj.isDone = !status;
         return taskObj;
       } else {
         return taskObj;

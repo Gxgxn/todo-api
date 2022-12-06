@@ -17,7 +17,7 @@ module.exports = async function deleteTaskController(req, res) {
     res.status(204).json({
       success: true,
       message: "Task Deleted Successfully",
-      todo,
+      newTasks,
     });
   } catch (error) {
     console.log(error);
