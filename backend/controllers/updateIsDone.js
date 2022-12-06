@@ -5,7 +5,6 @@ module.exports = async function updateIsDone(req, res) {
     const todoId = req.params.id;
     const taskId = req.params.taskId;
     const status = req.body.isDone;
-    console.log(status);
     if (!taskId || !todoId) {
       throw new Error("both todo id and task id required");
     }
