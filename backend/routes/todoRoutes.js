@@ -17,7 +17,7 @@ router.delete("/deletetodo/:id", deleteTodoController);
 router.delete("/deletetask/:id/:taskId", deleteTask);
 router.put("/updatetask/:id/:taskId", updateTask);
 router.put("/toggle/:id/:taskId", toggleIsDone);
-router.get("/getalltodo", getallTodo);
+router.get("/getalltodo/:uId", getallTodo);
 router.get("/gettodo/:id", getTodo);
 
 module.exports = router;

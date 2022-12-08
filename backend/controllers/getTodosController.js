@@ -1,10 +1,10 @@
-// import
 //test route
 const Todo = require("../model/Todo");
 
 module.exports = async function getTodosController(req, res, next) {
   try {
-    const todos = await Todo.find();
+    const userId = req.params.uId;
+    const todos = await Todo.find({ userId: userId });
     res.status(201).json(todos);
   } catch (error) {
     console.log(error);
